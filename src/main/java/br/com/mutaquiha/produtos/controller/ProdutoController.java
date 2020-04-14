@@ -22,12 +22,22 @@ public class ProdutoController {
     }
 
     @GetMapping("produtos/{id}")
-    public Optional<Produto> getProdutoById(@PathVariable long id){
+    public Produto getProdutoById(@PathVariable long id){
         return produtoRepository.findById(id);
     }
 
     @PostMapping("produtos")
     public Produto saveProduto(@RequestBody Produto produto){
+        return produtoRepository.save(produto);
+    }
+
+    @DeleteMapping("produtos/{id}")
+    public void deleteById(@PathVariable long id){
+        produtoRepository.deleteById(id);
+    }
+
+    @PutMapping("produtos")
+    public Produto updateById(@RequestBody Produto produto){
         return produtoRepository.save(produto);
     }
 }
