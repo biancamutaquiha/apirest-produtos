@@ -1,6 +1,5 @@
 package br.com.mutaquiha.produtos.entity;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -24,9 +22,4 @@ public class Produto implements Serializable {
     @Column(unique = true, nullable = false)
     String nome;
 
-    @Column(nullable = false)
-    BigDecimal quantidade;
-
-    @Column(nullable = false)
-    BigDecimal valor;
 }
